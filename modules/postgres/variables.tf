@@ -56,7 +56,7 @@ variable "databases" {
 
 variable "database_options" {
   description = "Options for each database like collate & charset"
-  default = {}
+  default     = {}
 }
 
 variable "firewall_rule_prefix" {
@@ -67,7 +67,7 @@ variable "firewall_rule_prefix" {
 variable "firewall_rules" {
   description = "The list of maps, describing firewall rules. Valid map items: name, start_ip, end_ip."
   default     = {}
-  type = map
+  type        = map
 }
 
 variable "vnet_rule_name_prefix" {
@@ -78,7 +78,7 @@ variable "vnet_rule_name_prefix" {
 variable "vnet_rules" {
   description = "The list of maps, describing vnet rules. Valud map items: name, subnet_id."
   default     = {}
-  type = map
+  type        = map
 }
 
 variable "tags" {

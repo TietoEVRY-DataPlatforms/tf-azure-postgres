@@ -8,7 +8,7 @@ resource "azurerm_postgresql_server" "server" {
   location            = var.location
   resource_group_name = var.resource_group_name
 
-  sku_name     = var.sku_name
+  sku_name = var.sku_name
 
   storage_profile {
     storage_mb            = var.storage_mb
@@ -51,7 +51,7 @@ resource "azurerm_postgresql_virtual_network_rule" "vnet_rules" {
 }
 
 resource "azurerm_postgresql_configuration" "db_configs" {
-  for_each = var.postgresql_configurations
+  for_each            = var.postgresql_configurations
   resource_group_name = var.resource_group_name
   server_name         = azurerm_postgresql_server.server.name
 
