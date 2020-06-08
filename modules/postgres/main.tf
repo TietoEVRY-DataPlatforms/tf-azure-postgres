@@ -38,8 +38,8 @@ resource "azurerm_postgresql_firewall_rule" "firewall_rules" {
   name                = "${var.firewall_rule_prefix}-${each.key}"
   resource_group_name = var.resource_group_name
   server_name         = azurerm_postgresql_server.server.name
-  start_ip_address    = each.value.start
-  end_ip_address      = each.value.end
+  start_ip_address    = each.value[0]
+  end_ip_address      = each.value[1]
 }
 
 resource "azurerm_postgresql_virtual_network_rule" "vnet_rules" {

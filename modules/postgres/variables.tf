@@ -61,7 +61,7 @@ variable "database_options" {
 
 variable "firewall_rule_prefix" {
   description = "Specifies prefix for firewall rule names."
-  default     = "fwr-"
+  default     = "fwr"
 }
 
 variable "firewall_rules" {
@@ -72,7 +72,7 @@ variable "firewall_rules" {
 
 variable "vnet_rule_name_prefix" {
   description = "Specifies prefix for vnet rule names."
-  default     = "vnr-"
+  default     = "vnr"
 }
 
 variable "vnet_rules" {
