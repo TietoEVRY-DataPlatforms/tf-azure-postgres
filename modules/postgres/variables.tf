@@ -44,9 +44,14 @@ variable "server_version" {
   default     = "10.0"
 }
 
-variable "ssl_enforcement" {
+variable "ssl_enforcement_enabled" {
   description = "Specifies if SSL should be enforced on connections. Possible values are Enabled and Disabled."
-  default     = "Enabled"
+  default     = true
+}
+
+variable "ssl_minimal_tls_version_enforced" {
+  description = "Minimum SSL Mode to be used."
+  default     = "TLS1_2"
 }
 
 variable "databases" {

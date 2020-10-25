@@ -16,12 +16,12 @@ resource "azurerm_postgresql_server" "server" {
     geo_redundant_backup  = var.geo_redundant_backup
   }
 
-  administrator_login          = var.administrator_login
-  administrator_login_password = var.administrator_password
-  version                      = var.server_version
-  ssl_enforcement              = var.ssl_enforcement
-
-  tags = var.tags
+  administrator_login              = var.administrator_login
+  administrator_login_password     = var.administrator_password
+  version                          = var.server_version
+  ssl_enforcement_enabled          = var.ssl_enforcement_enabled
+  ssl_minimal_tls_version_enforced = var.ssl_minimal_tls_version_enforced
+  tags                             = var.tags
 }
 
 resource "azurerm_postgresql_database" "dbs" {
