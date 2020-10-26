@@ -27,7 +27,7 @@ variable "backup_retention_days" {
 
 variable "geo_redundant_backup" {
   description = "Enable Geo-redundant or not for server backup. Valid values for this property are Enabled or Disabled, not supported for the basic tier."
-  default     = "Disabled"
+  default     = false
 }
 
 variable "administrator_login" {

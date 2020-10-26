@@ -10,11 +10,9 @@ resource "azurerm_postgresql_server" "server" {
 
   sku_name = var.sku_name
 
-  storage_profile {
-    storage_mb            = var.storage_mb
-    backup_retention_days = var.backup_retention_days
-    geo_redundant_backup  = var.geo_redundant_backup
-  }
+  storage_mb                   = var.storage_mb
+  backup_retention_days        = var.backup_retention_days
+  geo_redundant_backup_enabled = var.geo_redundant_backup
 
   administrator_login              = var.administrator_login
   administrator_login_password     = var.administrator_password
