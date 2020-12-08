@@ -30,6 +30,11 @@ variable "geo_redundant_backup" {
   default     = false
 }
 
+variable "auto_grow_enabled" {
+  description = "Enable auto-grow for the database server, to automatically allow for the server to adjust itself once it needs more diskspace."
+  default = false
+}
+
 variable "administrator_login" {
   description = "The Administrator Login for the PostgreSQL Server. Changing this forces a new resource to be created."
   default     = "pgadm"
