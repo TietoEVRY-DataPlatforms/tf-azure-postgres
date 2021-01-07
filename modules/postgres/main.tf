@@ -21,6 +21,16 @@ resource "azurerm_postgresql_server" "server" {
   ssl_enforcement_enabled          = var.ssl_enforcement_enabled
   ssl_minimal_tls_version_enforced = var.ssl_minimal_tls_version_enforced
   tags                             = var.tags
+
+  threat_detection_policy  {
+   enabled = (var.sku_name != "B*" ? true : false) #CONDITION is needed here
+   email_account_admins = true
+   email_addresses = ["dp-platform-team@tietoevry.com"]
+   #disabled_alerts = ["",]
+   #retention_days = 365
+   #storage_account_key =
+   #storage_endpoint = 
+  }
 }
 
 resource "azurerm_postgresql_database" "dbs" {
