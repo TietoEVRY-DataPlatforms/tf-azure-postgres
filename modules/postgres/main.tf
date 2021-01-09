@@ -23,7 +23,7 @@ resource "azurerm_postgresql_server" "server" {
   tags                             = var.tags
 
   threat_detection_policy  {
-   enabled = (var.sku_name != "B*" ? true : false) #CONDITION is needed here
+   enabled = (var.sku_name != "B*" ? true : false)
    email_account_admins = true
    email_addresses = ["dp-platform-team@tietoevry.com"]
    #disabled_alerts = ["",]
