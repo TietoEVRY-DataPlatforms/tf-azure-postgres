@@ -23,7 +23,7 @@ resource "azurerm_postgresql_server" "server" {
   tags                             = var.tags
 
   dynamic "threat_detection_policy" {
-    for_each = length(regexall("^B.*", var.sku_name)) == 0 ? [1] : [0]
+    for_each = length(regexall("^B.*", var.sku_name)) == 0 ? [1] : []
 
     content {
       enabled = true
