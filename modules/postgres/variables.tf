@@ -32,7 +32,7 @@ variable "geo_redundant_backup" {
 
 variable "auto_grow_enabled" {
   description = "Enable auto-grow for the database server, to automatically allow for the server to adjust itself once it needs more diskspace."
-  default = false
+  default     = false
 }
 
 variable "administrator_login" {
@@ -77,7 +77,7 @@ variable "firewall_rule_prefix" {
 variable "firewall_rules" {
   description = "The list of maps, describing firewall rules. Valid map items: name, start_ip, end_ip."
   default     = {}
-  type        = map
+  type        = map(any)
 }
 
 variable "vnet_rule_name_prefix" {
@@ -88,17 +88,17 @@ variable "vnet_rule_name_prefix" {
 variable "vnet_rules" {
   description = "The list of maps, describing vnet rules. Valud map items: name, subnet_id."
   default     = {}
-  type        = map
+  type        = map(any)
 }
 
 variable "tags" {
   description = "A map of tags to set on every taggable resources. Empty by default."
-  type        = "map"
+  type        = map(string)
   default     = {}
 }
 
 variable "postgresql_configurations" {
   description = "A map with PostgreSQL configurations to enable."
-  type        = "map"
+  type        = map(string)
   default     = {}
 }
