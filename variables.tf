@@ -103,7 +103,7 @@ variable "create_mode" {
   default     = "Default"
 }
 
-variable "create_source_server_id" {
+variable "creation_source_server_id" {
   description = "ID of the source Server to use when mode is PointInTimeRestore, GeoRestore or Replica"
   type        = string
   default     = null

@@ -23,8 +23,8 @@ resource "azurerm_postgresql_server" "server" {
   tags                             = var.tags
 
   // Support for Replica, PIT and GeoRestore
-  create_mode             = var.create_mode
-  create_source_server_id = var.create_source_server_id
+  create_mode               = var.create_mode
+  creation_source_server_id = var.creation_source_server_id
 
   dynamic "threat_detection_policy" {
     for_each = length(regexall("^B.*", var.sku_name)) == 0 ? [1] : []
