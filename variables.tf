@@ -97,6 +97,18 @@ variable "tags" {
   default     = {}
 }
 
+variable "create_mode" {
+  description = "Create mode supported by the resource."
+  type        = string
+  default     = "Default"
+}
+
+variable "create_sourcreation_source_server_id" {
+  description = "ID of the source Server to use when mode is PointInTimeRestore, GeoRestore or Replica"
+  type        = string
+  default     = null
+}
+
 variable "postgresql_configurations" {
   description = "A map with PostgreSQL configurations to enable."
   type        = map(string)

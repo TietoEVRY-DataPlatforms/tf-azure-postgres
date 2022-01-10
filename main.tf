@@ -22,6 +22,10 @@ resource "azurerm_postgresql_server" "server" {
   ssl_minimal_tls_version_enforced = var.ssl_minimal_tls_version_enforced
   tags                             = var.tags
 
+  // Support for Replica, PIT and GeoRestore
+  create_mode                          = var.create_mode
+  create_sourcreation_source_server_id = var.create_sourcreation_source_server_id
+
   dynamic "threat_detection_policy" {
     for_each = length(regexall("^B.*", var.sku_name)) == 0 ? [1] : []
 
