@@ -109,6 +109,12 @@ variable "creation_source_server_id" {
   default     = null
 }
 
+variable "restore_point_in_time" {
+  description = "ISO8601 timestamp to restore from"
+  type        = string
+  default     = null
+}
+
 variable "postgresql_configurations" {
   description = "A map with PostgreSQL configurations to enable."
   type        = map(string)
